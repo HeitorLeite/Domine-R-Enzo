@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domine R - Exemplos de Programas</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Exemplos de Programas em R</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Principal</a></li>
+                <li><a href="instalacao.html">Configuração</a></li>
+                <li><a href="informacoes.html">Sobre o R</a></li>
+                <li><a href="programas.html">Exemplos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="programa-1">
+            <h2>Olá Mundo</h2>
+            <p>O clássico exemplo "Olá Mundo" em R:</p>
+            <pre><code># Imprimir "Olá Mundo"
+print("Olá Mundo")</code></pre>
+        </section>
+
+        <section class="programa-2">
+            <h2>Operações Básicas</h2>
+            <p>Realize algumas operações matemáticas simples:</p>
+            <pre><code># Soma
+a <- 5
+b <- 3
+soma <- a + b
+print(soma)
+
+# Subtração
+subtracao <- a - b
+print(subtracao)
+
+# Multiplicação
+multiplicacao <- a * b
+print(multiplicacao)
+
+# Divisão
+divisao <- a / b
+print(divisao)</code></pre>
+        </section>
+        
+        <section class="programa-3">
+            <h2>Criação de Vetores</h2>
+            <p>Crie e manipule vetores:</p>
+            <pre><code># Criar um vetor
+numeros <- c(1, 2, 3, 4, 5)
+
+# Acessar elementos do vetor
+print(numeros[1])  # Primeiro elemento
+print(numeros[2:4])  # Do segundo ao quarto elemento
+
+# Soma dos elementos do vetor
+soma_numeros <- sum(numeros)
+print(soma_numeros)</code></pre>
+        </section>
+        
+        <section class="programa-4">
+            <h2>Funções Simples</h2>
+            <p>Defina e use uma função simples:</p>
+            <pre><code># Definir uma função
+soma <- function(a, b) {
+  return(a + b)
+}
+
+# Usar a função
+resultado <- soma(4, 7)
+print(resultado)</code></pre>
+        </section>
+        
+        <section class="programa-5">
+            <h2>Gráfico Básico</h2>
+            <p>Crie um gráfico básico com a função plot:</p>
+            <pre><code># Criar dados
+x <- c(1, 2, 3, 4, 5)
+y <- c(2, 3, 5, 7, 11)
+
+# Criar gráfico
+plot(x, y, type="b", col="blue", main="Gráfico de exemplo", xlab="Eixo X", ylab="Eixo Y")</code></pre>
+        </section>
+    </main>
+</body>
+</html>

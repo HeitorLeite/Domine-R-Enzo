@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes sobre a Linguagem R</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Informações Detalhadas sobre R</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Principal</a></li>
+                <li><a href="instalacao.html">Configuração</a></li>
+                <li><a href="informacoes.html">Sobre o R</a></li>
+                <li><a href="programas.html">Exemplos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="historia">
+            <h2>Origem da Linguagem R</h2>
+            <p>R foi criada no início dos anos 90 por Ross Ihaka e Robert Gentleman na Universidade de Auckland. Inspirada na linguagem S, tornou-se uma das linguagens mais populares para análise estatística e ciência de dados, evoluindo continuamente graças à comunidade global de desenvolvedores.</p>
+        </section>
+        
+        <section class="sintaxe">
+            <h2>Elementos da Sintaxe</h2>
+            <p>A sintaxe do R é intuitiva e fácil de aprender. Aqui estão alguns exemplos básicos:</p>
+            <ul>
+                <li><strong>Atribuição:</strong> <code>x <- 10</code></li>
+                <li><strong>Operações matemáticas:</strong> <code>total <- x + 5</code></li>
+                <li><strong>Criação de vetores:</strong> <code>numeros <- c(1, 2, 3, 4, 5)</code></li>
+                <li><strong>Funções:</strong> <code>media <- mean(numeros)</code></li>
+            </ul>
+            <p>A linguagem de programação R é conhecida por sua simplicidade e poder no tratamento de dados estatísticos. Aqui estão alguns dos conceitos básicos da sintaxe em R:</p>
+            
+            <h3>Comentários</h3>
+            <p>Os comentários em R são iniciados com o caractere <code>#</code>. Tudo o que segue o <code>#</code> em uma linha será ignorado pelo interpretador R.</p>
+            <pre><code># Este é um comentário em R</code></pre>
+
+            <h3>Atribuição de Valores</h3>
+            <p>A atribuição de valores a variáveis pode ser feita usando <code>&lt;-</code>, <code>-&gt;</code>, ou <code>=</code>.</p>
+            <pre><code>x <- 10  # Atribuindo o valor 10 à variável x
+y = 5    # Também atribuindo 5 à variável y
+10 -> z  # Atribuindo 10 à variável z</code></pre>
+
+            <h3>Vetores</h3>
+            <p>Os vetores são uma estrutura de dados fundamental em R e podem ser criados usando a função <code>c()</code>.</p>
+            <pre><code>numeros <- c(1, 2, 3, 4, 5)  # Criando um vetor de números
+nomes <- c("Ana", "João", "Maria")  # Criando um vetor de caracteres</code></pre>
+
+            <h3>Funções</h3>
+            <p>As funções em R são definidas com a palavra-chave <code>function</code>.</p>
+            <pre><code>soma <- function(a, b) {
+  resultado <- a + b
+  return(resultado)
+}
+
+soma(3, 4)  # Chamada da função soma com argumentos 3 e 4</code></pre>
+
+            <h3>Estruturas de Controle</h3>
+            <p>R possui várias estruturas de controle, como condicionais (<code>if</code>, <code>else</code>) e loops (<code>for</code>, <code>while</code>).</p>
+
+            <h4>Condicionais</h4>
+            <pre><code>x <- 7
+if (x > 5) {
+  print("x é maior que 5")
+} else {
+  print("x não é maior que 5")
+}</code></pre>
+
+            <h4>Loops</h4>
+            <pre><code># Loop for
+for (i in 1:5) {
+  print(i)
+}
+
+# Loop while
+contagem <- 1
+while (contagem <= 5) {
+  print(contagem)
+  contagem <- contagem + 1
+}</code></pre>
+
+            <h3>Indexação</h3>
+            <p>Você pode acessar elementos de vetores e outras estruturas de dados usando colchetes <code>[]</code>.</p>
+            <pre><code># Acessando o segundo elemento do vetor
+numeros[2]</code></pre>
+
+            <h3>Pacotes</h3>
+            <p>R possui uma vasta coleção de pacotes que estendem suas funcionalidades. Para instalar e carregar pacotes, usamos as funções <code>install.packages()</code> e <code>library()</code>, respectivamente.</p>
+            <pre><code>install.packages("ggplot2")  # Instalando o pacote ggplot2
+library(ggplot2)  # Carregando o pacote ggplot2</code></pre>
+
+            <h3>Data Frames</h3>
+            <p>Data frames são tabelas que permitem armazenar dados em um formato de tabela, semelhante a planilhas.</p>
+            <pre><code>dados <- data.frame(
+  Nome = c("Ana", "João", "Maria"),
+  Idade = c(28, 35, 22),
+  Cidade = c("São Paulo", "Rio de Janeiro", "Belo Horizonte")
+)
+
+print(dados)</code></pre>
+
+        </section>
+
+        <section class="bibliotecas">
+            <h2>Pacotes e Bibliotecas</h2>
+            <p>R possui uma vasta gama de pacotes disponíveis no CRAN (Comprehensive R Archive Network). Alguns dos mais usados incluem:</p>
+            <ul>
+                <li><strong>ggplot2:</strong> Para visualizações de dados.</li>
+                <li><strong>dplyr:</strong> Para manipulação de dados.</li>
+                <li><strong>tidyr:</strong> Para organização de dados.</li>
+                <li><strong>shiny:</strong> Para criar aplicações web interativas.</li>
+            </ul>
+        </section>
+
+        <section class="ferramentas">
+            <h2>Ferramentas de Desenvolvimento</h2>
+            <p>Para programar em R, várias ferramentas estão disponíveis:</p>
+            <ul>
+                <li><strong>RStudio:</strong> Um ambiente de desenvolvimento integrado (IDE) popular.</li>
+                <li><strong>Jupyter Notebooks:</strong> Para criar e compartilhar documentos que contêm código ao vivo, equações, visualizações e texto narrativo.</li>
+                <li><strong>VSCode:</strong> Um editor de código fonte com extensões para R.</li>
+            </ul>
+        </section>
+
+        <section class="recursos">
+            <h2>Recursos de Aprendizado</h2>
+            <p>Existem muitos recursos para aprender R, incluindo:</p>
+            <ul>
+                <li>Documentação oficial do CRAN.</li>
+                <li>Coursera e DataCamp para cursos online.</li>
+                <li>Comunidades como Stack Overflow e fóruns de usuários de R.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
