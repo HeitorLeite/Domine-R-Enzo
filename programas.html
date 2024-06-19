@@ -8,83 +8,167 @@
 </head>
 <body>
     <header>
-        <h1>Exemplos de Programas em R</h1>
+        <h1>Exemplo de Programa em R</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Principal</a></li>
-                <li><a href="instalacao.html">Configuração</a></li>
-                <li><a href="informacoes.html">Sobre o R</a></li>
-                <li><a href="programas.html">Exemplos</a></li>
+              <li><a href="index.html">Principal</a></li>
+              <li><a href="instalacao.html">Modulo 1</a></li>
+              <li><a href="informacoes.html">Módulo 2</a></li>
+              <li><a href="programas.html">Módulo 3</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <section class="programa-1">
-            <h2>Olá Mundo</h2>
-            <p>O clássico exemplo "Olá Mundo" em R:</p>
-            <pre><code># Imprimir "Olá Mundo"
-print("Olá Mundo")</code></pre>
-        </section>
+            <h2>Calcula área e perimetro</h2>
+            <p>O programa a seguir permite calcular a área e o perímetro de diferentes polígonos (círculo, quadrado, retângulo e triângulo equilátero). O usuário é solicitado a escolher um polígono e fornecer as dimensões necessárias (como raio, lado, largura e altura). Após cada três cálculos, o programa gera um gráfico de barras que exibe as áreas calculadas. O usuário pode decidir se deseja continuar calculando ou encerrar o programa após cada iteração.</p>
+            <h2>Como o Programa Funciona:</h2>
+            <p><strong>Importação da Biblioteca:</strong></p>
+            <p><code>library(ggplot2)</code> é usada para criar gráficos no R.</p>
+            
+            <p><strong>Definição das Funções para Cálculo de Área e Perímetro:</strong></p>
+            <p>Funções específicas para calcular a área e o perímetro de círculos, quadrados, retângulos e triângulos equiláteros são definidas.</p>
+            
+            <p><strong>Vetores e Contador:</strong></p>
+            <p>Vetores <code>areas</code> e <code>poligonos</code> são usados para armazenar as áreas calculadas e os nomes dos polígonos.</p>
+            <p>O contador <code>contador_execucoes</code> rastreia quantas vezes o usuário fez cálculos.</p>
+            
+            <p><strong>Loop Principal:</strong></p>
+            <p>O programa entra em um loop onde solicita ao usuário que escolha um polígono e forneça as dimensões necessárias.</p>
+            <p>Com base na entrada do usuário, a área é calculada e armazenada nos vetores.</p>
+            <p>A cada três execuções, um gráfico de barras é gerado mostrando as áreas dos polígonos calculados até então. O gráfico é salvo como um arquivo PNG.</p>
+            
+            <p><strong>Continuação ou Encerramento:</strong></p>
+            <p>Após cada cálculo, o usuário é perguntado se deseja continuar ou encerrar o programa. Se optar por encerrar, o loop é interrompido e o programa termina.</p>
+            
+            <pre><code>library(ggplot2)
 
-        <section class="programa-2">
-            <h2>Operações Básicas</h2>
-            <p>Realize algumas operações matemáticas simples:</p>
-            <pre><code># Soma
-a <- 5
-b <- 3
-soma <- a + b
-print(soma)
-
-# Subtração
-subtracao <- a - b
-print(subtracao)
-
-# Multiplicação
-multiplicacao <- a * b
-print(multiplicacao)
-
-# Divisão
-divisao <- a / b
-print(divisao)</code></pre>
-        </section>
-        
-        <section class="programa-3">
-            <h2>Criação de Vetores</h2>
-            <p>Crie e manipule vetores:</p>
-            <pre><code># Criar um vetor
-numeros <- c(1, 2, 3, 4, 5)
-
-# Acessar elementos do vetor
-print(numeros[1])  # Primeiro elemento
-print(numeros[2:4])  # Do segundo ao quarto elemento
-
-# Soma dos elementos do vetor
-soma_numeros <- sum(numeros)
-print(soma_numeros)</code></pre>
-        </section>
-        
-        <section class="programa-4">
-            <h2>Funções Simples</h2>
-            <p>Defina e use uma função simples:</p>
-            <pre><code># Definir uma função
-soma <- function(a, b) {
-  return(a + b)
-}
-
-# Usar a função
-resultado <- soma(4, 7)
-print(resultado)</code></pre>
-        </section>
-        
-        <section class="programa-5">
-            <h2>Gráfico Básico</h2>
-            <p>Crie um gráfico básico com a função plot:</p>
-            <pre><code># Criar dados
-x <- c(1, 2, 3, 4, 5)
-y <- c(2, 3, 5, 7, 11)
-
-# Criar gráfico
-plot(x, y, type="b", col="blue", main="Gráfico de exemplo", xlab="Eixo X", ylab="Eixo Y")</code></pre>
+                # Funções para cálculos de área e perímetro
+                
+                # Círculo
+                calcular_area_circulo <- function(raio) {
+                  return(pi * raio^2)
+                }
+                calcular_perimetro_circulo <- function(raio) {
+                  return(2 * pi * raio)
+                }
+                
+                # Quadrado
+                calcular_area_quadrado <- function(lado) {
+                  return(lado^2)
+                }
+                
+                calcular_perimetro_quadrado <- function(lado) {
+                  return(4 * lado)
+                }
+                
+                # Retângulo
+                calcular_area_retangulo <- function(largura, altura) {
+                  return(largura * altura)
+                }
+                
+                calcular_perimetro_retangulo <- function(largura, altura) {
+                  return(2 * (largura + altura))
+                }
+                
+                # Triângulo equilátero
+                calcular_area_triangulo <- function(lado) {
+                  return((sqrt(3) / 4) * lado^2)
+                }
+                
+                calcular_perimetro_triangulo <- function(lado) {
+                  return(3 * lado)
+                }
+                
+                # Vetores para armazenar áreas calculadas
+                areas <- c()
+                poligonos <- c()
+                
+                # Contador de execuções
+                contador_execucoes <- 0
+                
+                # Loop principal
+                repeat {
+                  # Seleção do polígono
+                  poligono <- readline(prompt="Escolha o polígono (circulo, quadrado, retangulo, triangulo): ")
+                  
+                  if (poligono == "circulo") {
+                    raio <- as.numeric(readline(prompt="Entre com o raio do círculo: "))
+                    area <- calcular_area_circulo(raio)
+                    print(paste("Raio:", raio))
+                    print(paste("Área do círculo:", area))
+                    areas <- c(areas, area)
+                    poligonos <- c(poligonos, "Círculo")
+                    
+                  } else if (poligono == "quadrado") {
+                    lado <- as.numeric(readline(prompt="Entre com o lado do quadrado: "))
+                    area <- calcular_area_quadrado(lado)
+                    print(paste("Lado:", lado))
+                    print(paste("Área do quadrado:", area))
+                    areas <- c(areas, area)
+                    poligonos <- c(poligonos, "Quadrado")
+                    
+                  } else if (poligono == "retangulo") {
+                    largura <- as.numeric(readline(prompt="Entre com a largura do retângulo: "))
+                    altura <- as.numeric(readline(prompt="Entre com a altura do retângulo: "))
+                    area <- calcular_area_retangulo(largura, altura)
+                    print(paste("Largura:", largura))
+                    print(paste("Altura:", altura))
+                    print(paste("Área do retângulo:", area))
+                    areas <- c(areas, area)
+                    poligonos <- c(poligonos, "Retângulo")
+                    
+                  } else if (poligono == "triangulo") {
+                    lado <- as.numeric(readline(prompt="Entre com o lado do triângulo equilátero: "))
+                    area <- calcular_area_triangulo(lado)
+                    print(paste("Lado:", lado))
+                    print(paste("Área do triângulo equilátero:", area))
+                    areas <- c(areas, area)
+                    poligonos <- c(poligonos, "Triângulo")
+                    
+                  } else {
+                    print("Polígono inválido! Por favor, escolha entre: circulo, quadrado, retangulo, triangulo.")
+                  }
+                
+                  # Incrementar contador de execuções
+                  contador_execucoes <- contador_execucoes + 1
+                  faltam <- 3 - (contador_execucoes %% 3)
+                  if (faltam != 0) {
+                    cat("Faltam", faltam, "execuções para gerar o próximo gráfico.\n")
+                  }
+                  
+                  # Gerar gráfico após cada 3 execuções
+                  if (contador_execucoes %% 3 == 0) {
+                    # Criar DataFrame para gráfico
+                    df_areas <- data.frame(Poligono = poligonos, Area = areas)
+                    
+                    # Criar gráfico de barras das áreas calculadas
+                    grafico_areas <- ggplot(df_areas, aes(x = Poligono, y = Area, fill = Poligono)) +
+                      geom_bar(stat = "identity", width = 0.5) +
+                      labs(title = "Áreas dos Polígonos", x = "Polígono", y = "Área") +
+                      theme_minimal() +
+                      theme(plot.background = element_rect(fill = "black"),
+                            panel.background = element_rect(fill = "black"),
+                            text = element_text(color = "white"),
+                            axis.text = element_text(color = "white"),
+                            legend.position = "none")
+                    
+                    # Salvar o gráfico como PNG com nome único
+                    nome_arquivo <- paste0("areas_poligonos_", contador_execucoes, ".png")
+                    ggsave(nome_arquivo, plot = grafico_areas, width = 8, height = 6, bg="black")
+                    cat("O gráfico foi salvo como:", nome_arquivo, "\n")
+                  }
+                  
+                  # Perguntar ao usuário se deseja continuar
+                  continuar <- readline(prompt="Deseja calcular a área e o perímetro de outro polígono? (s/n): ")
+                  if (tolower(continuar) != "s") {
+                    break
+                  }
+                  cat("\n")
+                }
+                
+                print("Programa encerrado.")
+            </code></pre>
         </section>
     </main>
 </body>
